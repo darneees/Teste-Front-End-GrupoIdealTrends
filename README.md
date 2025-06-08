@@ -35,13 +35,25 @@
 ## 📂 Estrutura de Pastas
 
 ```
-├── assets/                                     # Arquivos estáticos (imagens, estilos, etc.)
-│   ├── css/                                    # Folhas de estilo CSS
-│   │   └── style.css                           # Arquivo principal de estilos
-│   └── img/                                    # Imagens do projeto
-│       └── image.webp                          # Imagem de exemplo
-├── index.html                                  # Arquivo HTML principal da aplicação
-├── README.md                                   # Documentação do projeto
+├── assets/
+│   ├── css/                                    
+│   │   └── _imports/           
+│   │   │   └── _variables.scss
+│   │   │   └── _funcitons.scss        
+│   │   └── style.css
+│   │   └── style.css.map
+│   │   └── style.scss
+│   └── img/
+│       └── slide/
+│       │   └──── slide-1.webp                  
+│       │   └──── slide-2.webp                  
+│       └── logo.png                            
+│       └── office.webp
+├── public/    
+│   └── js/
+│       └──app.js                
+├── index.html                                  
+├── README.md                                   
 ```
 
 ---
