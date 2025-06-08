@@ -1,0 +1,856 @@
+@import "_imports/variables", "_imports/functions";
+
+* {
+  @include reset();
+  font-family: "Satoshi", sans-serif;
+}
+
+body {
+  width: 100%;
+  height: auto;
+}
+
+#blue-bar {
+  @include align(center, end, row, 3rem);
+  background-color: $orange-600;
+  width: 100%;
+  height: 8vh;
+  padding: 0 2rem;
+
+  p {
+    color: $black-50;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+}
+
+header {
+  @include align(center, center, row, 3rem);
+  background-color: $black-100;
+  width: 100%;
+  height: 12vh;
+
+  nav {
+    @include align(center, center, row, 15rem);
+    width: 100%;
+    height: 100%;
+
+    .navigation_logo {
+      width: auto;
+      height: 3.3rem;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .navigation_menu {
+      @include align(center, center, row, 2rem);
+      list-style: none;
+
+      > li {
+        position: relative;
+
+        > a {
+          color: $black-900;
+          font-size: 1.1rem;
+          font-weight: 500;
+          text-decoration: none;
+
+          &:hover {
+            color: $orange-800;
+          }
+        }
+
+        &:hover > .navigation_submenu {
+          display: flex;
+        }
+      }
+
+      .navigation_submenu,
+      .navigation_subSubmenu {
+        @include align(start, center, column, 2.2rem);
+        display: none;
+        position: absolute;
+        background-color: $orange-600;
+        list-style: none;
+        min-width: 280px;
+        z-index: 10;
+        padding: 1rem;
+
+        a {
+          text-decoration: none;
+          color: $black-50;
+          font-size: 1rem;
+          padding: 1rem;
+          width: 100%;
+
+          &:hover {
+            background-color: $orange-800;
+            color: $black-50;
+          }
+        }
+      }
+
+      .navigation_submenu {
+        top: 100%;
+        left: 0;
+
+        .navigation_hasSubmenu {
+          @include align(start, center, column, 0);
+          background-color: $orange-800;
+          position: relative;
+          width: 100%;
+
+          &:hover > .navigation_subSubmenu {
+            display: flex;
+          }
+
+          a {
+            .lucide {
+              height: 1rem;
+            }
+          }
+        }
+      }
+
+      .navigation_subSubmenu {
+        top: 0;
+        left: 100%;
+      }
+    }
+  }
+}
+
+main {
+  #section-slide {
+    .swiper {
+      position: relative;
+
+      .swiper-wrapper {
+        position: relative;
+        height: 55vh;
+
+        .swiper-slide:nth-child(1) {
+          @include align(start, center, column, 1.5rem);
+          position: relative;
+          background-image: url("../img/slide/slide-1.webp");
+          background-size: cover;
+          background-position: end;
+          background-repeat: no-repeat;
+          width: 100%;
+          height: 100%;
+          color: $black-50;
+          padding: 0 8rem;
+          cursor: pointer;
+
+          h1 {
+            color: $black-50;
+            font-size: 2.2rem;
+            width: 50%;
+            font-weight: 600;
+
+            span {
+              color: $orange-600;
+            }
+          }
+
+          p {
+            color: $black-50;
+            opacity: 0.75;
+            font-size: 1.1rem;
+            width: 50%;
+            font-weight: 400;
+          }
+
+          button {
+            @include align(center, center, row, 1rem);
+            background-color: $orange-800;
+            color: $black-50;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            cursor: pointer;
+
+            &:hover {
+              background-color: $orange-600;
+            }
+          }
+        }
+
+        .swiper-slide:nth-child(2) {
+          @include align(end, center, column, 1rem);
+          position: relative;
+          background-image: url("../img/slide/slide-2.webp");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          width: 100%;
+          color: $black-50;
+          height: 100%;
+          font-size: 1rem;
+          padding: 0 8rem 0 0;
+          cursor: pointer;
+
+          h1 {
+            color: $black-50;
+            font-size: 2.5rem;
+            width: 45%;
+            font-weight: 600;
+
+            span {
+              color: $orange-600;
+            }
+          }
+
+          p {
+            color: $black-50;
+            font-size: 1.2rem;
+            width: 45%;
+            font-weight: 400;
+          }
+        }
+      }
+
+      #next {
+        @include align(center, center, row, 0);
+        background-color: $orange-600;
+        color: $black-50;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 2%;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 0.8rem;
+        cursor: pointer;
+        z-index: 10;
+      }
+
+      #prev {
+        @include align(center, center, row, 0);
+        background-color: $orange-600;
+        color: $black-50;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 2%;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 0.8rem;
+        cursor: pointer;
+        z-index: 10;
+      }
+
+      .swiper-button-next:after,
+      .swiper-button-prev:after {
+        font-weight: 800;
+        font-size: 1.2rem !important;
+      }
+    }
+  }
+
+  #section-content {
+    @include align(center, center, row, 3rem);
+    background-color: $black-50;
+    width: 100%;
+    height: 80vh;
+
+    .section-content_text {
+      @include align(center, center, column, 1rem);
+      width: 50%;
+
+      h2 {
+        color: $black-900;
+        font-size: 2rem;
+        font-weight: 600;
+        width: 75%;
+
+        span {
+          color: $orange-600;
+        }
+      }
+
+      p {
+        color: $black-900;
+        font-size: 1.1rem;
+        font-weight: 400;
+        width: 75%;
+      }
+    }
+
+    .section-content_image {
+      @include align(end, center, row, 0);
+      width: 50%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  #section-highlights {
+    @include align(center, center, row, 3rem);
+    background-color: $black-50;
+    width: 100%;
+    height: 100vh;
+
+    .section-highlights_text:nth-child(1) {
+      @include align(start, space-between, column, 1rem);
+      background-color: $black-100;
+      width: 20%;
+      height: 400px;
+      padding: 2rem;
+
+      picture {
+        .lucide {
+          background-color: $orange-600;
+          color: $black-50;
+          width: 5rem;
+          height: 5rem;
+          padding: 0.8rem;
+        }
+      }
+
+      h3 {
+        color: $black-900;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      p {
+        color: $black-900;
+        font-size: 1rem;
+        font-weight: 400;
+      }
+
+      button {
+        @include align(center, center, row, 1rem);
+        background-color: $orange-800;
+        color: $black-50;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 0.7rem;
+        border-radius: 0.3rem;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $black-50;
+          color: $black-900;
+        }
+      }
+    }
+
+    .section-highlights_text:nth-child(2) {
+      @include align(start, space-between, column, 1rem);
+      background-color: $black-100;
+      width: 20%;
+      height: 400px;
+      padding: 2rem;
+
+      picture {
+        .lucide {
+          background-color: $orange-600;
+          color: $black-50;
+          width: 5rem;
+          height: 5rem;
+          padding: 0.8rem;
+        }
+      }
+
+      h3 {
+        color: $black-900;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      p {
+        color: $black-900;
+        font-size: 1rem;
+        font-weight: 400;
+      }
+
+      button {
+        @include align(center, start, row, 1rem);
+        background-color: $orange-800;
+        color: $black-50;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 0.7rem;
+        border-radius: 0.3rem;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $black-50;
+          color: $black-900;
+        }
+      }
+    }
+
+    .section-highlights_text:nth-child(3) {
+      @include align(start, space-between, column, 1rem);
+      background-color: $black-100;
+      width: 20%;
+      height: 400px;
+      padding: 2rem;
+
+      picture {
+        .lucide {
+          background-color: $orange-600;
+          color: $black-50;
+          width: 5rem;
+          height: 5rem;
+          padding: 0.8rem;
+        }
+      }
+
+      h3 {
+        color: $black-900;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      p {
+        color: $black-900;
+        font-size: 1rem;
+        font-weight: 400;
+      }
+
+      button {
+        @include align(center, center, row, 1rem);
+        background-color: $orange-800;
+        color: $black-50;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 0.7rem;
+        border-radius: 0.3rem;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $black-50;
+          color: $black-900;
+        }
+      }
+    }
+
+    .section-highlights_text:nth-child(4) {
+      @include align(start, space-between, column, 1rem);
+      background-color: $black-100;
+      width: 20%;
+      height: 400px;
+      padding: 2rem;
+
+      picture {
+        .lucide {
+          background-color: $orange-600;
+          color: $black-50;
+          width: 5rem;
+          height: 5rem;
+          padding: 0.8rem;
+        }
+      }
+
+      h3 {
+        color: $black-900;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      p {
+        color: $black-900;
+        font-size: 1rem;
+        font-weight: 400;
+      }
+
+      button {
+        @include align(center, center, row, 1rem);
+        background-color: $orange-800;
+        color: $black-50;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 0.7rem;
+        border-radius: 0.3rem;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $black-50;
+          color: $black-900;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  @include align(start, center, row, 3rem);
+  background-color: $orange-600;
+  width: 100%;
+  height: 45vh;
+  padding: 4rem 0 0 0;
+  color: $black-50;
+
+  .footer_content {
+    @include align(start, center, column, 3rem);
+    width: 50%;
+
+    p {
+      color: $black-50;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .footer_links {
+      @include align(start, center, column, 0.5rem);
+      list-style: none;
+
+      li {
+        margin-right: 2rem;
+
+        a {
+          color: $black-50;
+          font-size: 1.2rem;
+          font-weight: 700;
+          text-decoration: none;
+
+          &:hover {
+            color: $black-900;
+          }
+        }
+      }
+    }
+  }
+
+  .footer_social {
+    @include align(center, center, column, 1rem);
+
+    p {
+      color: $black-50;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .social_links {
+      @include align(center, center, row, 1rem);
+      list-style: none;
+      li {
+        a {
+          color: $black-50;
+          font-size: 1.5rem;
+          text-decoration: none;
+
+          &:hover {
+            color: $black-900;
+          }
+        }
+      }
+    }
+  }
+}
+
+// responsive styles
+@media (780px<=width<=999px) {
+}
+@media (430px<=width<=779px) {
+  main {
+    #section-slide {
+      .swiper {
+        .swiper-wrapper {
+          .swiper-slide:nth-child(1),
+          .swiper-slide:nth-child(2) {
+            padding: 0 3.5rem;
+
+            h1 {
+              width: 100%;
+              font-size: 1.65rem;
+            }
+
+            p {
+              width: 100%;
+              font-size: 1rem;
+            }
+
+            button {
+              @include align(center, center, row, 1rem);
+              font-size: 0.9rem;
+            }
+          }
+        }
+
+        #next {
+          bottom: -5rem;
+          right: 2%;
+          width: 3rem;
+          height: 3rem;
+        }
+
+        #prev {
+          bottom: -5rem;
+          right: 2%;
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+    }
+
+    #section-content {
+      @include align(center, center, column, 3rem);
+      height: auto;
+      padding: 3rem 0 0 0;
+
+      .section-content_text {
+        width: 80%;
+
+        h2 {
+          font-size: 1.8rem;
+          width: 100%;
+        }
+
+        p {
+          font-size: 1rem;
+          width: 100%;
+        }
+      }
+
+      .section-content_image {
+        width: 100%;
+        height: auto;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    #section-highlights {
+      @include align(center, center, column, 3rem);
+      background-color: $black-50;
+      width: 100%;
+      height: auto;
+      padding: 5rem 0;
+
+      .section-highlights_text:nth-child(1),
+      .section-highlights_text:nth-child(2),
+      .section-highlights_text:nth-child(3),
+      .section-highlights_text:nth-child(4) {
+        @include align(start, space-between, column, 1rem);
+        background-color: $black-100;
+        width: 90%;
+        height: auto;
+        padding: 2rem;
+
+        picture {
+          .lucide {
+            background-color: $orange-600;
+            color: $black-50;
+            width: 4rem;
+            height: 4rem;
+            padding: 0.8rem;
+          }
+        }
+
+        h3 {
+          color: $black-900;
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+
+        p {
+          color: $black-900;
+          font-size: 1rem;
+          font-weight: 400;
+        }
+
+        button {
+          @include align(center, center, row, 1rem);
+          background-color: $orange-800;
+          color: $black-50;
+          font-size: 1rem;
+          font-weight: 500;
+          padding: 0.7rem;
+          border-radius: 0.3rem;
+          border: none;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $black-50;
+            color: $black-900;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    @include align(center, center, column-reverse, 3rem);
+    height: 100vh;
+    padding: 0;
+
+    .footer_content {
+      @include align(start, center, column, 5rem);
+      width: 70%;
+    }
+
+    .footer_social {
+      @include align(start, center, column, 1rem);
+      width: 70%;
+    }
+  }
+}
+
+@media (max-width: 429px) {
+
+
+  main {
+    #section-slide {
+      .swiper {
+        .swiper-wrapper {
+          .swiper-slide:nth-child(1),
+          .swiper-slide:nth-child(2) {
+            padding: 0 3.5rem;
+
+            h1 {
+              width: 100%;
+              font-size: 1.65rem;
+            }
+
+            p {
+              width: 100%;
+              font-size: 1rem;
+            }
+
+            button {
+              @include align(center, center, row, 1rem);
+              font-size: 0.9rem;
+            }
+          }
+        }
+
+        #next {
+          bottom: -5rem;
+          right: 2%;
+          width: 3rem;
+          height: 3rem;
+        }
+
+        #prev {
+          bottom: -5rem;
+          right: 2%;
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+    }
+
+    #section-content {
+      @include align(center, center, column, 3rem);
+      height: auto;
+      padding: 3rem 0 0 0;
+
+      .section-content_text {
+        width: 80%;
+
+        h2 {
+          font-size: 1.8rem;
+          width: 100%;
+        }
+
+        p {
+          font-size: 1rem;
+          width: 100%;
+        }
+      }
+
+      .section-content_image {
+        width: 100%;
+        height: auto;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    #section-highlights {
+      @include align(center, center, column, 3rem);
+      background-color: $black-50;
+      width: 100%;
+      height: auto;
+      padding: 5rem 0;
+
+      .section-highlights_text:nth-child(1),
+      .section-highlights_text:nth-child(2),
+      .section-highlights_text:nth-child(3),
+      .section-highlights_text:nth-child(4) {
+        @include align(start, space-between, column, 1rem);
+        background-color: $black-100;
+        width: 90%;
+        height: auto;
+        padding: 2rem;
+
+        picture {
+          .lucide {
+            background-color: $orange-600;
+            color: $black-50;
+            width: 4rem;
+            height: 4rem;
+            padding: 0.8rem;
+          }
+        }
+
+        h3 {
+          color: $black-900;
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+
+        p {
+          color: $black-900;
+          font-size: 1rem;
+          font-weight: 400;
+        }
+
+        button {
+          @include align(center, center, row, 1rem);
+          background-color: $orange-800;
+          color: $black-50;
+          font-size: 1rem;
+          font-weight: 500;
+          padding: 0.7rem;
+          border-radius: 0.3rem;
+          border: none;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $black-50;
+            color: $black-900;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    @include align(center, center, column-reverse, 3rem);
+    height: 100vh;
+    padding: 0;
+
+    .footer_content {
+      @include align(start, center, column, 5rem);
+      width: 70%;
+    }
+
+    .footer_social {
+      @include align(start, center, column, 1rem);
+      width: 70%;
+    }
+  }
+}

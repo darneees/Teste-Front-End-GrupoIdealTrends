@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description"
+            content="A simple HTML document with basic structure">
+        <meta name="keywords" content="HTML, document, structure">
+        <meta name="author" content="Douglas">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Teste FrontEnd - Grupo Ideal Treds</title>
+        <!-- import css -->
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <!-- Import Font -->
+        <link rel="preload"
+            href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap"
+            as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <!-- import swiper carousel -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    </head>
+    <body>
+
+        <article id="blue-bar">
+            <p>(11) 4004-1234</p>
+            <p>(11) 91234-5678 (WhatsApp)</p>
+        </article>
+
+        <header>
+            <nav>
+                <picture class="navigation_logo"
+                    aria-labelledby="logo-image-heading">
+                    <img src="assets/img/logo.png"
+                        alt="logotipo da inovatech" title="inovatech">
+                </picture>
+
+                <ul class="navigation_menu" aria-label="Links de navegação">
+                    <li><a href="#" class="link">Home</a></li>
+                    <li><a href="#" class="link">Empresas</a></li>
+                    <li>
+                        <a href="#" class="link">Serviços</a>
+                        <!-- submen -->
+                        <ul class="navigation_submenu">
+                            <li><a href="#">Transformação Digital</a></li>
+                            <li><a href="#">Otimização de Processos</a></li>
+                            <li><a href="#">Segurança da Informação</a></li>
+                            <li><a href="#">Análise de Dados e BI</a></li>
+                            <!-- has-submenu -->
+                            <li class="navigation_hasSubmenu">
+                                <a href="#">
+                                    Desenvolvimento e TI
+                                    <i data-lucide="chevron-right"
+                                        aria-hidden="true"></i>
+                                </a>
+                                <!-- sub-submenu -->
+                                <ul class="navigation_subSubmenu">
+                                    <li><a href="#">Desenvolvimento de
+                                            Software</a></li>
+                                    <li><a href="#">Soluções em Nuvem
+                                            (Cloud)</a></li>
+                                    <li><a href="#">Infraestrutura de
+                                            TI</a></li>
+                                    <li><a href="#">Suporte Técnico
+                                            Especializado</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="link">Clientes</a></li>
+                    <li><a href="#" class="link">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="section-slide">
+
+                <section class="swiper">
+                    <section class="swiper-wrapper">
+                        <article class="swiper-slide">
+                            <h1>Soluções tecnológicas para <span>impulsionar</span> seu
+                                negócio</h1>
+                            <p>Da estratégia à execução, a inovatech é sua
+                                parceira ideal em tecnologia. Conheça nossas
+                                principais frentes de atuação:</p>
+                            <button>Conheça nossos serviços</button>
+                        </article>
+
+                        <article class="swiper-slide">
+                            <h1>Transformamos desafios em <span>resultados
+                                    reais</span></h1>
+                            <p>Nossa tecnologia não entrega apenas código,
+                                entrega crescimento, eficiência e vantagem
+                                competitiva.</p>
+                        </article>
+                    </section>
+
+                    <div class="swiper-button-prev" id="prev"></div>
+                    <div class="swiper-button-next" id="next"></div>
+                </section>
+
+                
+            </section>
+
+            <section id="section-content">
+                <article class="section-content_text">
+                    <h2>Bem-vindo à <span>InovaTech</span> soluções</h2>
+                    <p>Somos especialistas em transformar desafios em oportunidades. Com uma equipe de consultores experientes, oferecemos soluções tecnológicas que alinham a sua infraestrutura de TI aos seus objetivos de negócio.</p>
+                    <p>Nossa missão é garantir que sua empresa não apenas acompanhe as mudanças do mercado, mas que se torne um referencial de inovação e eficiência.</p>
+                    <p>Explore nossos serviços e descubra como podemos ajudar a construir o futuro do seu negócio hoje.</p>
+                </article>
+
+                <picture class="section-content_image">
+                    <img src="assets/img/office.webp" alt="">
+                </picture>
+            </section>
+
+            <section id="section-highlights">
+                <article class="section-highlights_text">
+                    <picture><i data-lucide="chart-no-axes-combined"></i></picture>
+                    <h3>Análise de Dados e Business Intelligence</h3>
+                    <p>Transformamos seus dados brutos em insights valiosos para decisões mais inteligentes e estratégicas.</p>
+                    <button>Saiba mais</button>
+                </article>
+                <article class="section-highlights_text">
+                    <picture><i data-lucide="shield-check"></i></picture>
+                    <h3>Consultoria em Cibersegurança</h3>
+                    <p>Proteja seus ativos mais importantes com nossas auditorias e implementação de políticas de segurança robustas.</p>
+                    <button>Veja nossos planos</button>
+                </article>
+                <article class="section-highlights_text">
+                    <picture><i data-lucide="cloud"></i></picture>
+                    <h3>Soluções em Nuvem</h3>
+                    <p>Migre sua infraestrutura para a nuvem com segurança e escalabilidade, reduzindo custos e aumentando a flexibilidade.</p>
+                    <button>Descubra as vantagens</button>
+                </article>
+                <article class="section-highlights_text">
+                    <picture><i data-lucide="cpu"></i></picture>
+                    <h3>Otimização de Processos</h3>
+                    <p>Mapeamos e redesenhamos seus fluxos de trabalho para eliminar gargalos e aumentar a produtividade da sua equipe.</p>
+                    <button>Fale com um especialista</button>
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            <section class="footer_content">
+                <ul class="footer_links">
+                    <li><a href="#">Política de privacidade</a></li>
+                    <li><a href="#">Termos de uso</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+                <p>© 2025 InovaTech soluções. Todos os direitos reservados. | Desenvolvido por inovaTech</p>
+            </section>
+
+            <section class="footer_social">
+                <p>Siga-nos nas redes sociais:</p>
+                <ul class="social_links">
+                    <li><a href="#"><i data-lucide="facebook"></i></a></li>
+                    <li><a href="#"><i data-lucide="twitter"></i></a></li>
+                    <li><a href="#"><i data-lucide="instagram"></i></a></li>
+                    <li><a href="#"><i data-lucide="linkedin"></i></a></li>
+                </ul>
+            </section>
+        </footer>
+
+        <!-- import swipper carousel -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <!-- import js -->
+        <script src="public/js/app.js"></script>
+        <!-- import icon -->
+        <script src="https://unpkg.com/lucide@latest"></script>
+        <script>
+            lucide.createIcons();
+        </script>
+    </body>
+</html>
