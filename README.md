@@ -1,25 +1,22 @@
 # Teste | Front End - Grupo Ideal Trends
 
-## Estrutura do Teste:
-
-
 ---
 
 ## 🎨 Paleta de Cores
 
 | Cor         | Código Hex   |
 |------------|------------|
-| ⚪ **** | `#` |
-| 🟢 **** | `#` |
-| 🔘 **** | `#` |
+| 🟠 **laranja** | `#D9793B | #c76531` |
+| ⚪ **branco** | `#FFFFFF` |
+| ⚫ **preto** | `#1e1e1e` |
 
 ## 🔠 Hierarquia Tipográfica
 
 | Elemento         | Fonte       | Peso  |
 |-----------------|------------|------|
-| **Título Principal (H1)** | Satoshi | Medium (500) |
-| **Subtítulo (H2, H3)** | Satoshi | Regular (400) |
-| **Parágrafo (P)** | Satoshi | Light (300) |
+| **Título Principal (H1)** | Satoshi | Bold (700) |
+| **Subtítulo (H2, H3)** | Satoshi | Medium (500) |
+| **Parágrafo (P)** | Satoshi | Regular (400) |
 
 ---
 
