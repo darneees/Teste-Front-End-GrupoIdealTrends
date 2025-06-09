@@ -186,7 +186,7 @@ header nav #mobile li {
 }
 header nav #mobile li a {
   color: #FFFFFF;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 500;
   text-decoration: none;
 }
@@ -1106,6 +1106,15 @@ footer .footer_social .social_links li a:hover {
   }
 }
 @media (max-width: 429px) {
+  #blue-bar {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+    padding: 1rem 0;
+  }
   header nav {
     display: flex;
     align-items: center;
