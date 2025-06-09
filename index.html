@@ -29,12 +29,14 @@
 
         <header>
             <nav>
+                <!-- logo -->
                 <picture class="navigation_logo"
                     aria-labelledby="logo-image-heading">
                     <img src="assets/img/logo.png"
                         alt="logotipo da inovatech" title="inovatech">
                 </picture>
 
+                <!-- menu desktop -->
                 <ul class="navigation_menu" aria-label="Links de navegação">
                     <li><a href="#" class="link">Home</a></li>
                     <li><a href="#" class="link">Empresas</a></li>
@@ -69,6 +71,20 @@
                     </li>
                     <li><a href="#" class="link">Clientes</a></li>
                     <li><a href="#" class="link">Contato</a></li>
+                </ul>
+
+                <!-- button menu mobile -->
+                <button id="open" aria-label="Menu mobile de navegação">
+                    <i data-lucide="equal"></i>
+                </button>
+                <!-- menu mobile -->
+                <ul id="mobile" aria-label="Links de navegação mobile">
+                    <button id="closed"><i data-lucide="x" class="closed"></i></button>
+                    <li><a href="#" class="menu_link">Home</a></li>
+                    <li><a href="#" class="menu_link">Empresas</a></li>
+                    <li><a href="#" class="menu_link">Serviços</a></li>
+                    <li><a href="#" class="menu_link">Clientes</a></li>
+                    <li><a href="#" class="menu_link">Contato</a></li>
                 </ul>
             </nav>
         </header>

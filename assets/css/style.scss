@@ -34,6 +34,7 @@ header {
     @include align(center, center, row, 15rem);
     width: 100%;
     height: 100%;
+    position: relative;
 
     .navigation_logo {
       width: auto;
@@ -116,7 +117,69 @@ header {
 
       .navigation_subSubmenu {
         top: 0;
-        left: 100%;
+        right: 100%;
+      }
+    }
+
+    #open {
+      @include align(center, center, row, 0);
+      display: none;
+      background-color: $orange-600;
+      color: $black-50;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.5rem;
+      border: none;
+      cursor: pointer;
+      z-index: 10;
+
+      .lucide {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+
+    #mobile {
+      @include align(center, center, column, 2rem);
+      position: fixed;
+      display: none;
+      background-color: $orange-600;
+      width: 100%;
+      height: 100vh;
+      bottom: 0;
+      right: 0;
+      z-index: 10;
+      list-style: none;
+
+      .lucide {
+        position: absolute;
+        top: 1.7rem;
+        right: 1.7rem;
+        color: $black-50;
+        height: 2.5rem;
+        width: 2.5rem;
+        cursor: pointer;
+      }
+
+      li {
+        @include align(center, center, row, 1rem);
+        width: 100%;
+        height: 4rem;
+
+        a {
+          color: $black-50;
+          font-size: 1.2rem;
+          font-weight: 500;
+          text-decoration: none;
+
+          &:hover {
+            color: $black-900;
+          }
+        }
+      }
+
+      &.show {
+        display: flex;
       }
     }
   }
@@ -557,9 +620,257 @@ footer {
 }
 
 // responsive styles
+@media (1000px<=width<=1299px) {
+  main {
+    #section-highlights {
+      @include align(center, center, row, 3rem);
+      background-color: $black-50;
+      width: 100%;
+      height: auto;
+      flex-wrap: wrap;
+      padding: 4rem;
+
+      .section-highlights_text:nth-child(1),
+      .section-highlights_text:nth-child(2),
+      .section-highlights_text:nth-child(3),
+      .section-highlights_text:nth-child(4) {
+        @include align(start, space-between, column, 0);
+        background-color: $black-100;
+        width: 33%;
+        height: 450px;
+        padding: 2rem;
+
+        picture {
+          .lucide {
+            background-color: $orange-600;
+            color: $black-50;
+            width: 3.3rem;
+            height: 3.3rem;
+            padding: 0.8rem;
+          }
+        }
+
+        h3 {
+          color: $black-900;
+          font-size: 1.3rem;
+          font-weight: 600;
+        }
+
+        p {
+          color: $black-900;
+          font-size: 1rem;
+          font-weight: 400;
+        }
+
+        button {
+          @include align(center, center, row, 1rem);
+          background-color: $orange-800;
+          color: $black-50;
+          font-size: 1rem;
+          font-weight: 500;
+          padding: 0.7rem;
+          border-radius: 0.3rem;
+          border: none;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $black-50;
+            color: $black-900;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (780px<=width<=999px) {
+  header {
+    nav {
+      @include align(center, space-between, row, 0);
+      padding: 0 2rem;
+
+      .navigation_menu {
+        display: none;
+      }
+
+      #open {
+        display: flex;
+      }
+
+      #mobile {
+        @include align(start, center, column, 2rem);
+        display: none;
+      }
+    }
+  }
+
+  main {
+    #section-slide {
+      .swiper {
+        .swiper-wrapper {
+          .swiper-slide:nth-child(1),
+          .swiper-slide:nth-child(2) {
+            padding: 0 5rem;
+
+            h1 {
+              width: 50%;
+              font-size: 1.65rem;
+            }
+
+            p {
+              width: 50%;
+              font-size: 1rem;
+            }
+
+            button {
+              @include align(center, center, row, 1rem);
+              font-size: 0.9rem;
+            }
+          }
+        }
+
+        #next {
+          bottom: -5rem;
+          right: 2%;
+          width: 3rem;
+          height: 3rem;
+        }
+
+        #prev {
+          bottom: -5rem;
+          right: 2%;
+          width: 3rem;
+          height: 3rem;
+        }
+      }
+    }
+
+    #section-content {
+      @include align(center, center, column, 4rem);
+      height: auto;
+      padding: 5rem 0 0 0;
+
+      .section-content_text {
+        width: 70%;
+
+        h2 {
+          font-size: 2.2rem;
+          width: 100%;
+        }
+
+        p {
+          font-size: 1.1rem;
+          width: 100%;
+        }
+      }
+
+      .section-content_image {
+        width: 100%;
+        height: auto;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    #section-highlights {
+      @include align(center, center, column, 3rem);
+      background-color: $black-50;
+      width: 100%;
+      height: auto;
+      padding: 5rem 0;
+
+      .section-highlights_text:nth-child(1),
+      .section-highlights_text:nth-child(2),
+      .section-highlights_text:nth-child(3),
+      .section-highlights_text:nth-child(4) {
+        @include align(start, space-between, column, 1rem);
+        background-color: $black-100;
+        width: 45%;
+        height: auto;
+        padding: 2rem;
+
+        picture {
+          .lucide {
+            background-color: $orange-600;
+            color: $black-50;
+            width: 4rem;
+            height: 4rem;
+            padding: 0.8rem;
+          }
+        }
+
+        h3 {
+          color: $black-900;
+          font-size: 1.5rem;
+          font-weight: 600;
+        }
+
+        p {
+          color: $black-900;
+          font-size: 1rem;
+          font-weight: 400;
+        }
+
+        button {
+          @include align(center, center, row, 1rem);
+          background-color: $orange-800;
+          color: $black-50;
+          font-size: 1rem;
+          font-weight: 500;
+          padding: 0.7rem;
+          border-radius: 0.3rem;
+          border: none;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $black-50;
+            color: $black-900;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    @include align(center, center, column-reverse, 3rem);
+    height: 70vh;
+    padding: 0;
+
+    .footer_content {
+      @include align(start, center, column, 5rem);
+      width: 70%;
+    }
+
+    .footer_social {
+      @include align(start, center, column, 1rem);
+      width: 70%;
+    }
+  }
 }
 @media (430px<=width<=779px) {
+  header {
+    nav {
+      @include align(center, space-between, row, 0);
+      padding: 0 2rem;
+
+      .navigation_menu {
+        display: none;
+      }
+
+      #open {
+        display: flex;
+      }
+
+      #mobile {
+        @include align(start, center, column, 2rem);
+        display: none;
+      }
+    }
+  }
+
   main {
     #section-slide {
       .swiper {
@@ -707,7 +1018,25 @@ footer {
 }
 
 @media (max-width: 429px) {
+  header {
+    nav {
+      @include align(center, space-between, row, 0);
+      padding: 0 2rem;
 
+      .navigation_menu {
+        display: none;
+      }
+
+      #open {
+        display: flex;
+      }
+
+      #mobile {
+        @include align(start, center, column, 2rem);
+        display: none;
+      }
+    }
+  }
 
   main {
     #section-slide {
