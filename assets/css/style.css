@@ -1123,6 +1123,19 @@ footer .footer_social .social_links li a:hover {
     gap: 0;
     padding: 0 2rem;
   }
+  header nav #open {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  header nav .navigation_logo {
+    width: auto;
+    height: 2.5rem;
+    max-height: 2.5rem;
+  }
+  header nav .navigation_logo img {
+    width: 100%;
+    height: 100%;
+  }
   header nav .navigation_menu {
     display: none;
   }

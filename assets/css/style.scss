@@ -1024,11 +1024,26 @@ footer {
     height: auto;
     padding: 1rem 0;
   }
-  
+
   header {
     nav {
       @include align(center, space-between, row, 0);
       padding: 0 2rem;
+
+      #open {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+
+      .navigation_logo {
+        width: auto;
+        height: 2.5rem;
+        max-height: 2.5rem;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
 
       .navigation_menu {
         display: none;
